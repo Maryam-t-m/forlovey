@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Secret Surprise 💖</title>
+  <title>Secret Surprise 🔥</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -15,74 +15,72 @@
       align-items: center;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ffd6e0, #ffe6f0);
+      background: linear-gradient(135deg, #000000, #1a0000);
       overflow: hidden;
+      color: white;
     }
 
     .box {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 0, 0, 0.08);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      backdrop-filter: blur(5px);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
     }
 
     h2 {
       font-family: 'Dancing Script', cursive;
-      font-size: 40px;
-      color: #ff4d88;
+      font-size: 42px;
+      color: #ff1a1a;
       margin-bottom: 20px;
     }
 
     input {
       padding: 10px;
-      width: 200px;
-      border: 2px solid #ffb3c6;
+      width: 220px;
+      border: 2px solid #ff1a1a;
       border-radius: 10px;
-      outline: none;
+      background: transparent;
+      color: white;
       text-align: center;
-      font-size: 16px;
+      outline: none;
     }
 
     button {
       margin-top: 15px;
-      padding: 10px 20px;
-      background: #ff4d88;
+      padding: 10px 25px;
+      background: #ff1a1a;
       color: white;
       border: none;
       border-radius: 20px;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 0 10px #ff1a1a;
     }
 
     button:hover {
-      background: #ff1a66;
+      background: black;
+      border: 1px solid #ff1a1a;
       transform: scale(1.1);
     }
 
     p {
       margin-top: 10px;
-      font-size: 14px;
-      color: #555;
+      font-size: 13px;
+      color: #ccc;
     }
 
-    /* floating hearts */
+    /* hearts */
     .heart {
       position: absolute;
-      color: #ff4d88;
+      color: #ff1a1a;
       font-size: 18px;
       animation: float 6s linear infinite;
     }
 
     @keyframes float {
-      0% {
-        transform: translateY(100vh);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
     }
   </style>
 </head>
@@ -90,15 +88,15 @@
 <body>
 
 <div class="box">
-  <h2>Enter the Secret 💖</h2>
+  <h2>Enter the Secret 🔥</h2>
 
   <input type="password" id="pass" placeholder="Password">
 
   <br>
 
-  <button onclick="checkPass()">Unlock 💌</button>
+  <button onclick="checkPass()">Unlock ❤️‍🔥</button>
 
-  <p>Only special person can enter this surprise ✨</p>
+  <p>Only special person can enter...</p>
 </div>
 
 <script>
@@ -108,15 +106,15 @@ function checkPass() {
   if(password === "0910") {
     window.location.href = "birthday.html";
   } else {
-    alert("Wrong password 😢 Try again");
+    alert("Wrong password 💔");
   }
 }
 
-/* floating hearts */
+/* hearts */
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
-  heart.innerHTML = "💖";
+  heart.innerHTML = "❤️";
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = Math.random() * 20 + 15 + "px";
@@ -128,7 +126,7 @@ function createHeart() {
   }, 6000);
 }
 
-setInterval(createHeart, 400);
+setInterval(createHeart, 350);
 </script>
 
 </body>
