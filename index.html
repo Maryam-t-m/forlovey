@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Secret Surprise 🔥</title>
+  <title>Secret Access 🤍</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -13,35 +12,34 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #1a0000);
+      background: linear-gradient(135deg, #f7f3ea, #ffffff);
       overflow: hidden;
-      color: white;
+      text-align: center;
+      color: #3a3a3a;
     }
 
     .box {
-      background: rgba(255, 0, 0, 0.08);
-      padding: 40px;
+      padding: 50px;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease;
     }
 
     h2 {
       font-family: 'Dancing Script', cursive;
-      font-size: 42px;
-      color: #ff1a1a;
+      font-size: 45px;
+      color: #8b6f47;
       margin-bottom: 20px;
     }
 
     input {
-      padding: 10px;
+      padding: 12px;
       width: 220px;
-      border: 2px solid #ff1a1a;
+      border: 1px solid #c2a87d;
       border-radius: 10px;
-      background: transparent;
-      color: white;
       text-align: center;
       outline: none;
     }
@@ -49,38 +47,35 @@
     button {
       margin-top: 15px;
       padding: 10px 25px;
-      background: #ff1a1a;
-      color: white;
       border: none;
-      border-radius: 20px;
+      border-radius: 25px;
+      background: #8b6f47;
+      color: white;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 0 10px #ff1a1a;
     }
 
     button:hover {
-      background: black;
-      border: 1px solid #ff1a1a;
-      transform: scale(1.1);
+      transform: scale(1.05);
+      background: #6f5638;
     }
 
-    p {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #ccc;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
-    /* hearts */
+    /* soft floating hearts */
     .heart {
       position: absolute;
-      color: #ff1a1a;
-      font-size: 18px;
+      color: #c2a87d;
       animation: float 6s linear infinite;
+      opacity: 0.6;
     }
 
     @keyframes float {
-      0% { transform: translateY(100vh); opacity: 1; }
-      100% { transform: translateY(-10vh); opacity: 0; }
+      0% {transform: translateY(100vh); opacity: 1;}
+      100% {transform: translateY(-10vh); opacity: 0;}
     }
   </style>
 </head>
@@ -88,45 +83,37 @@
 <body>
 
 <div class="box">
-  <h2>Enter the Secret 🔥</h2>
+  <h2>Enter the Secret 🤍</h2>
 
   <input type="password" id="pass" placeholder="Password">
 
   <br>
 
-  <button onclick="checkPass()">Unlock ❤️‍🔥</button>
-
-  <p>Only special person can enter...</p>
+  <button onclick="checkPass()">Unlock ✨</button>
 </div>
 
 <script>
 function checkPass() {
-  var password = document.getElementById("pass").value;
-
-  if(password === "0910") {
-    window.location.href = "birthday.html";
+  let pass = document.getElementById("pass").value;
+  if(pass === "0910") {
+    document.body.style.opacity = "0";
+    setTimeout(() => {
+      window.location.href = "birthday.html";
+    }, 600);
   } else {
-    alert("Wrong password 💔");
+    alert("Wrong password 🤍");
   }
 }
 
-/* hearts */
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤️";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
-}
-
-setInterval(createHeart, 350);
+// hearts
+setInterval(() => {
+  const h = document.createElement("div");
+  h.classList.add("heart");
+  h.innerHTML = "🤍";
+  h.style.left = Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},400);
 </script>
 
 </body>
