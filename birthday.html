@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday ❤️‍🔥</title>
+  <title>Happy Birthday 🤍</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
@@ -10,89 +10,104 @@
       margin: 0;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #1a0000);
-      color: white;
-      overflow: hidden;
+      background: linear-gradient(135deg, #f7f3ea, #ffffff);
+      color: #3a3a3a;
+      overflow-x: hidden;
     }
 
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 55px;
-      color: #ff1a1a;
-      margin-top: 80px;
-      text-shadow: 0 0 15px #ff1a1a;
+      font-size: 60px;
+      color: #8b6f47;
+      margin-top: 70px;
+      animation: fadeIn 2s ease;
     }
 
-    p {
+    #text {
+      max-width: 800px;
+      margin: auto;
       font-size: 18px;
-      padding: 0 20px;
-      color: #ddd;
+      line-height: 1.9;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInText 3s ease forwards;
+      animation-delay: 1s;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 16px;
-      background: #ff1a1a;
-      color: white;
+      margin-top: 25px;
+      padding: 12px 30px;
       border: none;
-      border-radius: 25px;
+      border-radius: 30px;
+      background: #8b6f47;
+      color: white;
       cursor: pointer;
-      box-shadow: 0 0 15px #ff1a1a;
       transition: 0.3s;
     }
 
     button:hover {
-      background: black;
-      border: 1px solid #ff1a1a;
-      transform: scale(1.1);
+      transform: scale(1.05);
+      background: #6f5638;
     }
 
-    /* hearts */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInText {
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* soft hearts */
     .heart {
       position: absolute;
-      color: #ff1a1a;
-      font-size: 18px;
+      color: #c2a87d;
       animation: float 6s linear infinite;
+      opacity: 0.6;
     }
 
     @keyframes float {
-      0% { transform: translateY(100vh); opacity: 1; }
-      100% { transform: translateY(-10vh); opacity: 0; }
+      0% {transform: translateY(100vh);}
+      100% {transform: translateY(-10vh); opacity: 0;}
     }
   </style>
 </head>
 
 <body>
 
-<h1>Happy Birthday My Love ❤️‍🔥</h1>
+<h1>Happy Birthday My Love 🤍</h1>
 
-<p>
-You are my dark paradise 🖤🔥<br>
-My love for you burns forever ❤️‍🔥
-</p>
+<div id="text">
+I never truly believed in love. To me, it always felt like something distant—like a beautiful story people wrote about, but never something I would actually live. I thought it was just a fantasy…  
+
+<br><br>
+But then you came into my life, and everything changed. Now I can see it, now I can feel it—love is real, and it lives in my heart because of you.
+
+<br><br>
+The best day of my life will always be our Nikah. It felt so fairylike… as if the world softened just for us.
+
+<br><br>
+And now I don’t want anything from life—just you. You taught me how gentle love could be, how safe it feels, how real it is when it’s with the right person.
+
+<br><br>
+With you, I don’t just believe in love… I live it. 🤍
+</div>
 
 <a href="https://drive.google.com/file/d/18mAIM3iE9uvWBjHukhcA0_Fz1ABm6GBR/view?usp=sharing" target="_blank">
-  <button>Watch Our Video 🎥</button>
+  <button>Watch Our Memory 🎥</button>
 </a>
 
 <script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤️";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
-}
-
-setInterval(createHeart, 300);
+setInterval(() => {
+  const h = document.createElement("div");
+  h.classList.add("heart");
+  h.innerHTML = "🤍";
+  h.style.left = Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},400);
 </script>
 
 </body>
